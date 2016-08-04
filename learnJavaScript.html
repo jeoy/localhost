@@ -1,0 +1,219 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<style type="text/css">
+  #div0{
+    /*background-color: red;*/
+    width: 200px;
+    height: 600px;
+    float: left;
+  }
+  #div1{
+    float: left;
+    width: 200px;
+  }
+</style>
+</head>
+<body>
+ 
+<ul id = "myMenu"  style="position:absolute; visibility:hidden; background-color:silver">
+  <li><a href="http://www.baidu.com">Baidu</a></li>
+  <li><a href="http://www.taobao.com">Taobao</a></li>
+  <li><a href="http://www.sina.com">Sina</a></li>
+ </ul>
+</body>
+
+<script>
+
+function compare(value1,value2) {
+  console.info("Entering compare(),arguments are "+ value1 + "," +value2);
+  console.log("Before Comparasion");
+	value1Str = value1.toString();
+	value2Str = value1.toString();
+     if (value1Str < value2Str) {
+          console.log("Exiting compare()");
+          return -1;
+     } else if (value1Str > value2Str) {
+                console.log("Exiting compare()");
+
+          return 1;
+     } else {
+                console.log("Exiting compare()");
+
+          return 0;
+     }
+}
+for (var i = 0; i < 5; i++) {
+  compare(5+i,2*i+3);
+}
+
+
+var largestNumber = function(nums){
+var string = '';
+numsSort = nums.sort(compare);
+numsSort = numsSort.reverse();
+for (var i in numsSort){
+   string = string + numsSort[i].toString();
+}
+return string;
+
+};
+
+nums = [6,3,30,34,5,9,51,23];
+// alert(largestNumber(nums));
+// window.open("http://www.baidu.com","_blank");
+
+var img1 = document.createElement("img");
+var img2 = document.createElement("img");
+var img3 = document.createElement("img");
+
+img1.src = "pic/pic1.jpg";
+img2.src = "pic/pic2.jpg";
+img3.src = "pic/pic3.jpg";
+var div1 = document.createElement("div");
+var div0 = document.createElement("div");
+var textbox = document.createElement("textarea");
+var p1 = document.createElement("p");
+var text1 = document.createTextNode("");
+ var p2 = document.createElement("p");
+ var p4 = document.createElement("p");
+ var p3 = document.createElement("p");
+var form1 = document.createElement("form");
+var text1 =  document.createElement("input");
+var select = document.createElement("select");
+var option1 = document.createElement("option");
+var option2 = document.createElement("option");
+var drawing = document.createElement("canvas");
+form1.method = "post";
+
+form1.value = "submit Form";
+option1.innerText = "Genji";
+option2.innerText = "Hanzo";
+select.appendChild(option1);
+select.appendChild(option2);
+select.options[1].selected = true;
+// submit.type = "option";
+ 
+text1.type = "text";
+text1.value = "徐晓清是个小呆比";
+text1.required = true;
+text1.autofocus = true;
+ text1.setSelectionRange(0, 3);
+div0.appendChild(form1);
+form1.appendChild(text1);
+form1.appendChild(select);
+drawing.draggable = true;
+div1.appendChild(drawing);
+if(drawing.getContext){
+  var context = drawing.getContext("2d");
+  context.strokeStyle = "red";
+ context.fillStyle = "rgba(0,0,255,0.5)";
+  context.fillRect(10,10,50,50);
+
+  context.fillStyle = "rgba(255,0,0,0.5)";
+  context.fillRect(30,30,50,50);
+
+   context.strokeStyle = "rgba(0,0,255,1)";
+  context.strokeRect(110,10,50,50);
+
+  context.strokeStyle = "rgba(255,0,0,1)";
+  context.strokeRect(130,30,50,50);
+}
+
+document.body.appendChild(div0);
+document.body.appendChild(div1);
+
+
+div0.id = "div0";
+div1.id = "div1";
+div0.contentEditable = true;
+document.execCommand("bold",false,null)
+var color = ["red","green","black"];
+var colorCopy = color;
+
+colorCopy[0] = ["black"];
+
+text1.addEventListener("keypress",function(event){
+  // alert("das");
+  event.preventDefault();
+  // p4.innerText = this.value.substring(this.selectionStart,this.selectionEnd);
+
+});
+
+div1.addEventListener("mouseout",function(event){
+  var keys = new Array();
+  if(event.shiftKey){
+  keys.push("shift");
+}
+
+ 
+  // alert("Keys:"+ keys.join(","));
+  p3.innerText ="pages : " +event.pageX + ", " + event.pageY +'\n screen: '+event.screenX + ", " + event.screenY;
+  
+  // alert("dsad\nwaed");
+
+});
+
+window.addEventListener("MozOrientation",function(event){
+   p4.innerText = "dsad"+event.X;
+
+});
+ 
+ 
+// document.addEventListener("contextmenu",function(event){
+//    event.preventDefault();
+//    var menu = document.getElementById("myMenu");
+//    menu.style.left = event.clientX + "px";
+//    menu.style.top = event.clientY + "px";
+//    menu.style.visibility = "visible";
+
+
+// });
+
+
+var btn1 = document.createElement("Button");
+btn1.innerText = "pushMe";
+
+var simEvent = document.createEvent("MouseEvents");
+
+
+
+simEvent.initMouseEvent("click",true,true,document.defaultView,0,0,0,0,0,false,false,false,false,0,null);
+
+btn1.dispatchEvent(simEvent);
+
+btn1.addEventListener("click",function(event){
+     div1.parentNode.removeChild(div1);
+    
+
+})
+
+
+
+div0.appendChild(textbox);
+div0.appendChild(p2);
+div0.appendChild(p3);
+div0.appendChild(p4);
+div0.appendChild(btn1);
+// div1.appendChild(p1);
+div1.appendChild(img2);
+div1.appendChild(img3);
+div1.appendChild(img1);
+ 
+ var childName = "";
+for (i =0;i< div1.childNodes.length; i ++){
+ 
+  childName = childName  + div1.childNodes[i].tagName + "\n";
+   // childName = div1.childNodes.length;
+}
+  
+  p2.innerText = childName;
+// img3.scrollIntoView();
+function add(){
+
+img1.scrollIntoView(false);
+
+}
+
+
+</script>

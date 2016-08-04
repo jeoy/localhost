@@ -1,0 +1,34 @@
+#box1
+{
+    position: relative;
+
+    width: 100%;
+    height: 600px;
+}  
+
+.box1
+{
+    position: relative;
+
+    width: 100%;
+    height: 600px;
+}  
+.left1
+{
+    height: 100%;
+    margin-right: 200px;
+
+   background-color: red;
+} 
+
+.right1
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 200px;
+    height: 100%;
+
+    background-color: blue
+}
