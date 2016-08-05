@@ -93,12 +93,15 @@ select.appendChild(option1);
 select.appendChild(option2);
 select.options[1].selected = true;
 // submit.type = "option";
- 
+  var data = new FormData();
+ data.append("name","Ian");
+
 text1.type = "text";
-text1.value = "徐晓清是个小呆比";
+text1.value = typeof data;
 text1.required = true;
 text1.autofocus = true;
  text1.setSelectionRange(0, 3);
+
 div0.appendChild(form1);
 form1.appendChild(text1);
 form1.appendChild(select);
